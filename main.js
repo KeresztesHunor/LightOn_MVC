@@ -1,5 +1,5 @@
 import Controller from "./MVC/Controller/Controller.js";
 
 $(() => {
-    new Controller(3);
+    new Controller(5);
 });
