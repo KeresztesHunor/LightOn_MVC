@@ -25,12 +25,10 @@ class Model
     szomszedokKeresese(index)
     {
         const VALTOZOTT_MEZO_INDEXEK = [];
-        const X = index % this.#meret;
-        const Y = Math.floor(index / this.#meret);
-        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, X + 1, Y);
-        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, X - 1, Y);
-        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, X, Y + 1);
-        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, X, Y - 1);
+        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, index + 1);
+        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, index - 1);
+        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, index + this.#meret);
+        this.#listahozSzomszedosIndexetHozzaad(VALTOZOTT_MEZO_INDEXEK, index - this.#meret);
         return VALTOZOTT_MEZO_INDEXEK;
     }
 
@@ -44,11 +42,11 @@ class Model
         return i >= this.#mezok.length;
     }
 
-    #listahozSzomszedosIndexetHozzaad(lista, x, y)
+    #listahozSzomszedosIndexetHozzaad(lista, index)
     {
-        if (x >= 0 && x < this.#meret && y >= 0 && y < this.#meret)
+        if (index >= 0 && index < this.#meret * this.#meret)
         {
-            lista.push(x + y * this.#meret);
+            lista.push(index);
         }
     }
 }
