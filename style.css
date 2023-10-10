@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 1024px;
+    margin: auto;
+}
+
+main > header > h1 {
+    text-align: center;
+}
+
+main > footer {
+    text-align: center;
+    padding: 16px;
+}
+
+article {
+    text-align: center;
+}
+
+#jatek-ter {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    display: grid;
+}
+
+#uj-jatek {
+    padding: 16px;
+}
+
+.mezo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.on {
+    background-color: yellow;
+}
+
+.off {
+    background-color: green;
+}
